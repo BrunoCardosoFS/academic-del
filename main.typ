@@ -1,4 +1,4 @@
-#import "modelo/config.typ": figura, sigla, tcc
+#import "academic-del/config.typ": figura, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",

@@ -1,6 +1,6 @@
-# Template de TCC em Typst — Universidade Federal de Sergipe (UFS)
+# Template de TCC em Typst — Departamento de Engenharia Elétrica
 
-Este repositório contém um modelo de Trabalho de Conclusão de Curso (TCC) em **Typst**, configurado e estilizado segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptado para as diretrizes da Universidade Federal de Sergipe (UFS).
+Este repositório contém um modelo de Trabalho de Conclusão de Curso (TCC) em **Typst**, configurado e estilizado segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptado para as diretrizes do Departamento de Engenharia Elétrica da Universidade Federal de Sergipe.
 
 ---
 
