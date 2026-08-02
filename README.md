@@ -10,22 +10,53 @@ Este modelo é fornecido **"COMO ESTÁ" ("AS IS")**, sem garantias de qualquer t
 
 ---
 
-## Estrutura dos Trabalhos Acadêmicos (ABNT NBR 14724)
+## 🛠️ Como Usar
 
-Conforme a ABNT NBR 14724, o documento acadêmico é dividido em três partes principais:
+Baixe a versão mais recente do modelo nas [Releases do GitHub](https://github.com/BrunoCardosoFS/academic-del/releases/latest).
 
-- **Elementos Pré-textuais**: Capa, folha de rosto, folha de aprovação, dedicatória, agradecimentos, epígrafe, resumo, *abstract*, sumário e listas explicativas (figuras, tabelas, siglas e símbolos).
-- **Elementos Textuais**: Introdução, desenvolvimento (fundamentação teórica, metodologia, análise de resultados) e conclusão.
-- **Elementos Pós-textuais**: Referências (obrigatórias), glossário, apêndices e anexos.
+**Tutorial Completo em PDF:** Confira o guia detalhado de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.pdf).
+
+Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
+
+### 1. Uso Local (Typst CLI / VS Code)
+1. Faça o download do arquivo ZIP da versão mais recente nas [Releases](https://github.com/BrunoCardosoFS/academic-del/releases/latest).
+2. Extraia o conteúdo em uma pasta de sua preferência.
+3. Abra o projeto no seu editor (ex: VS Code com a extensão *Typst LSP*) e comece a editar o arquivo `main.typ`.
+
+---
+
+### 2. Uso na Web (Typst App — [typst.app](https://typst.app))
+1. Faça o download e extraia o arquivo ZIP obtido nas [Releases](https://github.com/BrunoCardosoFS/academic-del/releases/latest).
+2. Acesse o [typst.app](https://typst.app) e crie um novo projeto em branco (*Blank Project*).
+3. Arraste todos os arquivos e pastas descompactados para a área de arquivos (*File Tree*) do Typst Web.
+4. Abra o `main.typ` para iniciar a escrita.
+
+---
+
+### 3. Integração em um Projeto Typst Existente
+Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
+1. Baixe o arquivo ZIP nas [Releases](https://github.com/BrunoCardosoFS/academic-del/releases/latest) e copie apenas a pasta `academic-del` para a raiz do seu projeto.
+2. No seu arquivo `.typ` principal, adicione o import no topo:
+
+```typst
+#import "academic-del/config.typ": figura, sigla, tcc
+
+#show: doc => tcc(
+  curso: "Engenharia Elétrica",
+  autor: "Seu Nome",
+  titulo: "Título do Seu Trabalho",
+  // ... demais configurações
+)
+```
 
 ---
 
 ## Configuração e Uso do Template
 
-O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `modelo/config.typ` e utilizando o comando `#show: doc => tcc(...)`:
+O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `academic-del/config.typ` e utilizando o comando `#show: doc => tcc(...)`:
 
 ```typst
-#import "modelo/config.typ": figura, sigla, tcc
+#import "academic-del/config.typ": figura, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",
