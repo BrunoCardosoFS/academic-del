@@ -17,7 +17,7 @@
 // =============================================================================
 
 #import "../core/format.typ": *
-#import "../core/utils.typ": _siglasState, sigla, figura
+#import "../core/utils.typ": _siglasState, figura, sigla
 #import "../core/listas.typ": lista-figuras, lista-siglas, lista-simbolos, lista-tabelas, sumario as pag-sumario
 #import "../core/pretextuais.typ": (
   agradecimentos as pag-agradecimentos, dedicatoria as pag-dedicatoria, epigrafe as pag-epigrafe, resumo as pag-resumo,

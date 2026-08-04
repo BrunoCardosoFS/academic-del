@@ -18,3 +18,4 @@
 
 #import "core/utils.typ": *
 #import "components/tcc.typ": *
+#import "components/pibic.typ": *
