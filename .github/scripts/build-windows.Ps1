@@ -22,10 +22,11 @@ else {
 }
 
 # 2. Copiar pasta academic-del, main.typ e referencias.bib para release
-Write-Host "-> Copiando arquivos para a pasta release..." -ForegroundColor Green
-Copy-Item -Path (Join-Path $ProjectRoot "academic-del") -Destination (Join-Path $ReleaseDir "academic-del") -Recurse -Force
-Copy-Item -Path (Join-Path $ProjectRoot "main.typ") -Destination (Join-Path $ReleaseDir "main.typ") -Force
-Copy-Item -Path (Join-Path $ProjectRoot "referencias.bib") -Destination (Join-Path $ReleaseDir "referencias.bib") -Force
+$SrcDir = Join-Path $ProjectRoot "src"
+Write-Host "-> Copiando arquivos de src/ para a pasta release..." -ForegroundColor Green
+Copy-Item -Path (Join-Path $SrcDir "academic-del") -Destination (Join-Path $ReleaseDir "academic-del") -Recurse -Force
+Copy-Item -Path (Join-Path $SrcDir "main.typ") -Destination (Join-Path $ReleaseDir "main.typ") -Force
+Copy-Item -Path (Join-Path $SrcDir "referencias.bib") -Destination (Join-Path $ReleaseDir "referencias.bib") -Force
 
 # 3. Apagar tutorial.pdf e gerar novamente com typst
 $TutorialPdf = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.pdf"

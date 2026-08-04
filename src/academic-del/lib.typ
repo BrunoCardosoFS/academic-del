@@ -16,5 +16,5 @@
 // documento gerado com as exigências de sua respectiva instituição.
 // =============================================================================
 
-
+#import "core/utils.typ": *
 #import "components/tcc.typ": *
