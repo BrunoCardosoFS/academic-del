@@ -81,9 +81,9 @@ Seu texto começa aqui...
 
 ---
 
-## Exemplo Completo de main.typ
+## Exemplo de main.typ
 
-Abaixo está um `main.typ` funcional e completo com todos os elementos:
+Abaixo está um `main.typ` com os elementos para um TCC:
 
 ```typst
 #import "academic-del/lib.typ": figura, sigla, tcc
@@ -208,14 +208,52 @@ Se o seu trabalho for um **Relatório Final de Iniciação Científica**, utiliz
   dataFinal: "agosto de 2026",
   sumario: true,
   resumo: (
-    texto: [Resumo do relatório de iniciação científica...],
-    palavrasChave: ("Iniciação Científica", "PIBIC", "Typst"),
+    texto: [
+      Este trabalho apresenta um sistema de monitoramento de energia elétrica
+      residencial baseado em Internet das Coisas (IoT)...
+    ],
+    palavrasChave: ("IoT", "Energia Elétrica", "Monitoramento", "Arduino"),
   ),
   doc,
 )
 
 = Introdução
-Texto da introdução...
+
+O monitoramento do consumo de energia elétrica é fundamental para...
+O #sigla("IoT", "Internet das Coisas") tem revolucionado este campo.
+
+= Objetivos
+
+== Objetivo Geral
+Desenvolver um sistema de monitoramento...
+
+== Objetivos Específicos
+- Implementar a leitura de tensão e corrente;
+- Transmitir os dados via #sigla("WiFi");
+- Exibir o consumo em tempo real.
+
+= Revisão Bibliográfica
+Os trabalhos de...
+
+= Metodologia
+
+#figura(
+  image("figuras/diagrama.png", width: 80%),
+  caption: [Diagrama de blocos do sistema.],
+  fonte: [Autoria própria.],
+) <fig-diagrama>
+
+Conforme ilustrado na @fig-diagrama, o sistema é composto por...
+
+= Conclusão
+
+O sistema desenvolvido demonstrou...
+
+// ============================
+// ELEMENTOS PÓS-TEXTUAIS
+// ============================
+#set heading(numbering: none)
+#bibliography("referencias.bib", style: "associacao-brasileira-de-normas-tecnicas", title: "REFERÊNCIAS")
 ```
 
 ---

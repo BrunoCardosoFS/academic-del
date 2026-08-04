@@ -121,6 +121,12 @@ fonte: "Arimo",
 
 = Introdução
 Texto da introdução...
+
+// ============================
+// ELEMENTOS PÓS-TEXTUAIS
+// ============================
+#set heading(numbering: none)
+#bibliography("referencias.bib", style: "associacao-brasileira-de-normas-tecnicas", title: "REFERÊNCIAS")
 ```
 
 ---

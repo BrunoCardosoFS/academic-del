@@ -27,6 +27,7 @@ Write-Host "-> Copiando arquivos de src/ para a pasta release..." -ForegroundCol
 Copy-Item -Path (Join-Path $SrcDir "academic-del") -Destination (Join-Path $ReleaseDir "academic-del") -Recurse -Force
 Copy-Item -Path (Join-Path $SrcDir "main.typ") -Destination (Join-Path $ReleaseDir "main.typ") -Force
 Copy-Item -Path (Join-Path $SrcDir "referencias.bib") -Destination (Join-Path $ReleaseDir "referencias.bib") -Force
+Copy-Item -Path (Join-Path $ProjectRoot "LICENSE") -Destination (Join-Path $ReleaseDir "academic-del") -Force
 
 # 3. Apagar tutorial.pdf e gerar novamente com typst
 # $TutorialPdf = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.pdf"
