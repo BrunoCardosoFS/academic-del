@@ -1,10 +1,8 @@
-# Release vx.x.x — Template de TCC em Typst (DEL / UFS)
+# Release vx.x.x — Template Acadêmico em Typst — DEL / UFS (TCC e PIBIC)
 
-Modelo de **Trabalho de Conclusão de Curso (TCC)** em **Typst**, configurado e adaptado conforme as normas da ABNT e diretrizes do **Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS)**.
+Conjunto de modelos acadêmicos para **Trabalhos de Conclusão de Curso (TCC)** e **Relatórios Finais PIBIC/PICVOL** em **Typst**, configurados e adaptados conforme as normas da ABNT e diretrizes do **Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS)**.
 
-📚 **Documentação completa:** [docs/index.md](https://github.com/BrunoCardosoFS/academic-del/blob/main/docs/index.md) — cobre instalação, configuração, elementos textuais e pós-textuais, arquitetura e changelog.
-
-**Tutorial Completo em PDF:** Confira o guia de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.pdf) e o seu [código Typst](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.typ) correspondente.
+📚 **Documentação completa:** [docs/index.md](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/docs/index.md) — cobre instalação, configuração (TCC e PIBIC), elementos textuais e pós-textuais, arquitetura e changelog.
 
 ---
 
@@ -15,14 +13,14 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 ### 1. Uso Local (Typst CLI / VS Code)
 1. Faça o download do arquivo `academic-del.zip` anexado nesta release.
 2. Extraia o conteúdo em uma pasta de sua preferência.
-3. Abra o projeto no seu editor (ex: VS Code com a extensão *Typst LSP*) e comece a editar o arquivo `main.typ`.
+3. Abra o projeto no seu editor (ex: VS Code com a extensão *Tinymist Typst*) e comece a editar o arquivo `main.typ`.
 
 > [!IMPORTANT]
 > Ao compilar via **Typst CLI**, é necessário informar o caminho da pasta de fontes com a flag `--font-path`:
 > ```sh
 > typst compile main.typ --font-path ./academic-del/fonts
 > ```
-> Sem isso, o Typst não encontrará as fontes customizadas do template e a compilação falhará.
+> Sem isso, o Typst não encontrará as fontes customizadas do template (Arimo) e a compilação falhará.
 
 ---
 
@@ -37,10 +35,11 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 ### 3. Integração em um Projeto Typst Existente
 Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
 1. Baixe o `academic-del.zip` e copie apenas a pasta `academic-del` para a raiz do seu projeto.
-2. No seu arquivo `.typ` principal, adicione o import no topo:
+2. No seu arquivo `.typ` principal, adicione o import e a configuração correspondente no topo:
 
+#### Para TCC:
 ```typst
-#import "academic-del/config.typ": figura, sigla, tcc
+#import "academic-del/lib.typ": figura, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",
@@ -48,3 +47,16 @@ Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
   titulo: "Título do Seu Trabalho",
   // ... demais configurações
 )
+```
+
+#### Para Relatório Final PIBIC / PICVOL:
+```typst
+#import "academic-del/lib.typ": figura, relatorioFinal, sigla
+
+#show: doc => relatorioFinal(
+  tituloProjeto: "Título do Projeto",
+  tituloPlanoDeTrabalho: "Título do Plano de Trabalho",
+  autor: "Nome do Bolsista",
+  // ... demais configurações
+)
+```
