@@ -1,5 +1,5 @@
 // =============================================================================
-// TEMPLATE DE TCC - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
+// TEMPLATE DE TRABALHOS ACADÊMICOS - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
 // Configuração e Estilização Typst conforme Normas ABNT
 // Versão: 0.0.2
 // -----------------------------------------------------------------------------
