@@ -4,12 +4,12 @@
   curso: "Engenharia Elétrica",
   autor: "Nome do Aluno",
   titulo: "Título do Trabalho:",
-  subtitulo: "Subtítulo do trabalho",
+  subtitulo: "Subtítulo do trabalho", // Opcional (Remover se não houver)
   instituicao: "Universidade Federal de Sergipe",
   local: "São Cristóvão",
   data: "2026",
   orientador: "Nome do Orientador, D. Sc.",
-  coorientador: "Nome do Coorientador", // Remover se não houver coorientador
+  coorientador: "Nome do Coorientador", // Opcional (Remover se não houver)
   submissao: [Trabalho de Conclusão de Curso submetido à Coordenação de Graduação em Engenharia Elétrica da Universidade Federal de Sergipe como parte dos requisitos necessários para a obtenção do grau de Bacharel em Ciências no Domínio da Engenharia Elétrica.],
   banca: (
     (
@@ -61,7 +61,7 @@
   listaSimbolos: true,
   simbolos: (
     "S": "Símbolo",
-  ),
+  ), // Opcional (Remover se não houver)
   doc,
 )
 
@@ -69,9 +69,9 @@
 
 
 
-// =============================================================================
+//========================
 // ELEMENTOS PÓS-TEXTUAIS
-// =============================================================================
+// =======================
 
 #set heading(numbering: none)
 #bibliography("referencias.bib", style: "associacao-brasileira-de-normas-tecnicas", title: "REFERÊNCIAS")

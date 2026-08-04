@@ -14,7 +14,7 @@ Este modelo é fornecido **"COMO ESTÁ" ("AS IS")**, sem garantias de qualquer t
 
 Baixe a versão mais recente do modelo nas [Releases do GitHub](https://github.com/BrunoCardosoFS/academic-del/releases/latest).
 
-**Tutorial Completo em PDF:** Confira o guia detalhado de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.pdf).
+**Tutorial Completo em PDF:** Confira o guia detalhado de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.pdf) o seu [código Typst](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.typ) correspondente.
 
 Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 
@@ -161,6 +161,7 @@ As tabelas devem priorizar um visual limpo sem linhas verticais nas extremidades
     table.hline(),
   ),
   caption: [Exemplo de tabela.],
+  fonte: [Fonte da tabela], // Se omitido, insere "Fonte: Autoria própria."
 ) <tab-exemplo>
 ```
 Para referenciar no texto: `@tab-exemplo`.
