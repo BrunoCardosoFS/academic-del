@@ -1,4 +1,4 @@
-﻿# 8. Changelog — Histórico de Versões
+# 8. Changelog — Histórico de Versões
 
 ---
 
@@ -14,8 +14,9 @@ Esta versão refatora o template de um arquivo monolítico (`config.typ`) para u
 
 | Arquivo | Descrição |
 |---|---|
-| `lib.typ` | Ponto de entrada público — re-exporta `tcc`, `figura` e `sigla` |
-| `components/tcc.typ` | Função principal `tcc()`, orquestra todos os pré-textuais |
+| `lib.typ` | Ponto de entrada público — re-exporta `tcc`, `relatorioFinal`, `figura` e `sigla` |
+| `components/tcc.typ` | Função principal `tcc()`, orquestra todos os pré-textuais de TCC |
+| `components/pibic.typ` | Função principal `relatorioFinal()`, orquestra a capa e pré-textuais de relatórios PIBIC/PICVOL |
 | `core/format.typ` | Estilos ABNT reutilizáveis (`aplicar-estilos-abnt()`) |
 | `core/utils.typ` | Funções utilitárias: `figura()` e `sigla()` |
 | `core/listas.typ` | Sumário e listas de figuras, tabelas, siglas e símbolos |

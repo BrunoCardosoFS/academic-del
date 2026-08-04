@@ -1,6 +1,6 @@
-# Template de TCC em Typst — Departamento de Engenharia Elétrica
+# Template Acadêmico em Typst — DEL / UFS (TCC e PIBIC)
 
-Este repositório contém um modelo de Trabalho de Conclusão de Curso (TCC) em **Typst**, configurado e estilizado segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptado para as diretrizes do Departamento de Engenharia Elétrica da Universidade Federal de Sergipe.
+Este repositório contém um conjunto de modelos acadêmicos (Trabalhos de Conclusão de Curso — TCC e Relatórios Finais PIBIC/PICVOL) em **Typst**, configurado e estilizado segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptado para as diretrizes do Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS).
 
 ---
 
@@ -18,9 +18,6 @@ A documentação completa do template está disponível online:
 
 Ela cobre instalação, configuração, uso de elementos textuais e pós-textuais, arquitetura interna do template e o histórico de versões.
 
-
-**Tutorial Completo em PDF:** Confira o guia de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.pdf) e o seu [código Typst](https://github.com/BrunoCardosoFS/academic-del/blob/main/academic-del/tutorial/tutorial.typ) correspondente.
-
 ---
 
 ## 🛠️ Como Usar
@@ -32,7 +29,7 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 ### 1. Uso Local (Typst CLI / VS Code)
 1. Faça o download do arquivo ZIP da versão mais recente nas [Releases](https://github.com/BrunoCardosoFS/academic-del/releases/latest).
 2. Extraia o conteúdo em uma pasta de sua preferência.
-3. Abra o projeto no seu editor (ex: VS Code com a extensão *Typst LSP*) e comece a editar o arquivo `main.typ`.
+3. Abra o projeto no seu editor (ex: VS Code com a extensão *Tinymist Typst*) e comece a editar o arquivo `main.typ`.
 
 ---
 
@@ -50,7 +47,7 @@ Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
 2. No seu arquivo `.typ` principal, adicione o import no topo:
 
 ```typst
-#import "academic-del/config.typ": figura, sigla, tcc
+#import "academic-del/lib.typ": figura, relatorioFinal, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",
@@ -64,10 +61,10 @@ Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
 
 ## Configuração e Uso do Template
 
-O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `academic-del/config.typ` e utilizando o comando `#show: doc => tcc(...)`:
+O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `academic-del/lib.typ` e utilizando a função `#show: doc => tcc(...)` (para TCC) ou `#show: doc => relatorioFinal(...)` (para PIBIC/PICVOL):
 
 ```typst
-#import "academic-del/config.typ": figura, sigla, tcc
+#import "academic-del/lib.typ": figura, relatorioFinal, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",

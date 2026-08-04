@@ -1,4 +1,4 @@
-﻿# 7. Arquitetura Interna do Template
+# 7. Arquitetura Interna do Template
 
 Esta seção documenta a estrutura de arquivos e o funcionamento interno do **academic-del**, voltada para quem deseja entender ou contribuir com o template.
 
@@ -10,9 +10,10 @@ O template foi estruturado de forma modular: cada responsabilidade é isolada em
 
 ```
 academic-del/
-├── lib.typ                  ← Ponto de entrada público (re-exporta tcc, figura, sigla)
+├── lib.typ                  ← Ponto de entrada público (re-exporta tcc, relatorioFinal, figura, sigla)
 ├── components/
-│   └── tcc.typ              ← Função principal tcc() — orquestra os pré-textuais
+│   ├── tcc.typ              ← Função principal tcc() — orquestra os pré-textuais de TCC
+│   └── pibic.typ            ← Função principal relatorioFinal() — orquestra capa e pré-textuais PIBIC/PICVOL
 └── core/
     ├── format.typ           ← Estilos ABNT globais (margens, fonte, seções, equações)
     ├── utils.typ            ← Funções públicas: figura() e sigla()
@@ -31,11 +32,13 @@ Versão: 0.0.2
 Licença: MIT
 ```
 
-Este arquivo é o único que o usuário importa. Ele re-exporta tudo que o `components/tcc.typ` expõe (via `#import "components/tcc.typ": *`), que por sua vez re-exporta `tcc`, `figura` e `sigla`.
+Este arquivo é o único que o usuário importa. Ele re-exporta tudo que os componentes em `components/` expõem (via `#import "components/tcc.typ": *` e `#import "components/pibic.typ": *`), que por sua vez disponibilizam `tcc`, `relatorioFinal`, `figura` e `sigla`.
 
 ```typst
 // lib.typ
+#import "core/utils.typ": *
 #import "components/tcc.typ": *
+#import "components/pibic.typ": *
 ```
 
 **Propósito:** Isolar o usuário da estrutura interna de pastas. Mesmo que os módulos internos sejam reorganizados, o import `"academic-del/lib.typ"` permanece estável.
@@ -71,6 +74,18 @@ Contém a função `tcc()` que:
 #import "../core/listas.typ": lista-figuras, lista-siglas, lista-simbolos, lista-tabelas, sumario as pag-sumario
 #import "../core/pretextuais.typ": agradecimentos as pag-agradecimentos, ...
 ```
+
+---
+
+### `components/pibic.typ` — Função PIBIC / PICVOL
+
+Contém a função `relatorioFinal()` que:
+
+1. Chama `aplicar-estilos-abnt()` para aplicar a formatação ABNT.
+2. Gera a capa institucional padronizada da UFS (POSGRAP/COPES) com logos e dados do projeto/plano de trabalho.
+3. Renderiza a folha de Resumo (ABNT NBR 6028) e o Sumário (ABNT NBR 6027).
+4. Ativa a numeração de páginas no canto superior direito a partir da Introdução.
+5. Renderiza o `body` (corpo do relatório).
 
 ---
 

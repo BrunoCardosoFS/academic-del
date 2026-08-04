@@ -1,6 +1,6 @@
-﻿# 1. Introdução — O que é o academic-del?
+# 1. Introdução — O que é o academic-del?
 
-O **academic-del** é um template de Trabalho de Conclusão de Curso (TCC) escrito em **Typst**, desenvolvido especificamente para atender às normas da **ABNT** e às diretrizes do **Departamento de Engenharia Elétrica (DEL) da Universidade Federal de Sergipe (UFS)**.
+O **academic-del** é um conjunto de templates acadêmicos (Trabalhos de Conclusão de Curso — TCC e Relatórios Finais de Iniciação Científica — PIBIC/PICVOL) escritos em **Typst**, desenvolvidos especificamente para atender às normas da **ABNT** e às diretrizes do **Departamento de Engenharia Elétrica (DEL) da Universidade Federal de Sergipe (UFS)**.
 
 ---
 

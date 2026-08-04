@@ -1,6 +1,6 @@
-﻿# 4. Configuração — Parâmetros da Função `tcc()`
+# 4a. Configuração — Parâmetros da Função `tcc()`
 
-A função `tcc()` é o coração do template. Ela recebe todas as informações do seu trabalho e gera automaticamente todos os elementos pré-textuais (capa, folha de rosto, folha de aprovação, resumo, listas, sumário, etc.).
+A função `tcc()` é o coração do template para Trabalhos de Conclusão de Curso (TCC). Ela recebe todas as informações do seu trabalho e gera automaticamente todos os elementos pré-textuais (capa, folha de rosto, folha de aprovação, resumo, listas, sumário, etc.).
 
 ---
 
@@ -269,7 +269,7 @@ fonte: "Arimo",  // Padrão — não altere sem motivo
 
 ---
 
-## Template com Valores Mínimos
+## Template TCC com Valores Mínimos
 
 Para um TCC sem elementos opcionais (dedicatória, coorientador, etc.):
 
@@ -306,4 +306,4 @@ Texto da introdução...
 
 ---
 
-[← Primeiros Passos](./03-primeiros-passos.md) | [Próximo: Elementos Textuais →](./05-elementos-textuais.md)
+[← Primeiros Passos](./03-primeiros-passos.md) | [Próximo: Configuração PIBIC →](./04b-configuracao-pibic.md)

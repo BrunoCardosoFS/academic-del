@@ -1,4 +1,4 @@
-﻿# 5. Elementos Textuais
+# 5. Elementos Textuais
 
 Esta seção documenta todos os recursos disponíveis para uso no corpo do seu trabalho (introdução, desenvolvimento e conclusão).
 
@@ -326,4 +326,4 @@ Nenhuma configuração adicional é necessária — o template cuida disso autom
 
 ---
 
-[← Configuração](./04-configuracao.md) | [Próximo: Elementos Pós-Textuais →](./06-elementos-pos-textuais.md)
+[← Configuração PIBIC](./04b-configuracao-pibic.md) | [Próximo: Elementos Pós-Textuais →](./06-elementos-pos-textuais.md)

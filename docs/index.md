@@ -1,6 +1,6 @@
-﻿# academic-del — Documentação
+# academic-del — Documentação
 
-> Template de TCC em **Typst** adaptado às normas da ABNT e às diretrizes do **Departamento de Engenharia Elétrica (DEL) da Universidade Federal de Sergipe (UFS)**.
+> Template para **TCC** e **Relatórios Finais PIBIC/PICVOL** em **Typst** adaptado às normas da ABNT e às diretrizes do **Departamento de Engenharia Elétrica (DEL) da Universidade Federal de Sergipe (UFS)**.
 
 ---
 
@@ -11,7 +11,8 @@
 | [01-introducao.md](./01-introducao.md) | O que é o template, motivação e isenção de responsabilidade |
 | [02-instalacao.md](./02-instalacao.md) | Como baixar e instalar (local, web e projeto existente) |
 | [03-primeiros-passos.md](./03-primeiros-passos.md) | Estrutura de arquivos e seu primeiro documento |
-| [04-configuracao.md](./04-configuracao.md) | Todos os parâmetros da função `tcc()` explicados |
+| [04a-configuracao-tcc.md](./04a-configuracao-tcc.md) | Parâmetros da função `tcc()` (TCC) |
+| [04b-configuracao-pibic.md](./04b-configuracao-pibic.md) | Parâmetros da função `relatorioFinal()` (PIBIC/PICVOL) |
 | [05-elementos-textuais.md](./05-elementos-textuais.md) | Figuras, tabelas, equações, listas, siglas e citações |
 | [06-elementos-pos-textuais.md](./06-elementos-pos-textuais.md) | Referências, glossário, apêndices e anexos |
 | [07-arquitetura.md](./07-arquitetura.md) | Estrutura interna do template (módulos e funções) |

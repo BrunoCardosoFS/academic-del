@@ -29,15 +29,15 @@ Copy-Item -Path (Join-Path $SrcDir "main.typ") -Destination (Join-Path $ReleaseD
 Copy-Item -Path (Join-Path $SrcDir "referencias.bib") -Destination (Join-Path $ReleaseDir "referencias.bib") -Force
 
 # 3. Apagar tutorial.pdf e gerar novamente com typst
-$TutorialPdf = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.pdf"
+# $TutorialPdf = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.pdf"
 # $TutorialTyp = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.typ"
 # $FontsDir = Join-Path $ReleaseDir "academic-del\medias\fonts"
 # $AcademicDelDir = Join-Path $ReleaseDir "academic-del"
 
-if (Test-Path -Path $TutorialPdf) {
-    Write-Host "-> Removendo tutorial.pdf antigo..." -ForegroundColor Yellow
-    Remove-Item -Path $TutorialPdf -Force
-}
+# if (Test-Path -Path $TutorialPdf) {
+#     Write-Host "-> Removendo tutorial.pdf antigo..." -ForegroundColor Yellow
+#     Remove-Item -Path $TutorialPdf -Force
+# }
 
 # Write-Host "-> Recompilando tutorial.pdf com Typst..." -ForegroundColor Green
 # typst compile --root $AcademicDelDir --font-path $FontsDir $TutorialTyp $TutorialPdf

@@ -1,4 +1,4 @@
-﻿# 3. Primeiros Passos
+# 3. Primeiros Passos
 
 ---
 
@@ -7,11 +7,12 @@
 Após extrair o template, a estrutura esperada é:
 
 ```
-meu-tcc/
+meu-projeto/
 ├── academic-del/               ← Pasta do template (NÃO edite)
 │   ├── lib.typ                 ← Ponto de entrada público
 │   ├── components/
-│   │   └── tcc.typ             ← Função principal tcc()
+│   │   ├── tcc.typ             ← Função principal tcc() (TCC)
+│   │   └── pibic.typ           ← Função principal relatorioFinal() (PIBIC/PICVOL)
 │   ├── core/
 │   │   ├── format.typ          ← Estilos ABNT (margens, fontes, etc.)
 │   │   ├── listas.typ          ← Sumário, lista de figuras/tabelas/siglas
@@ -28,7 +29,7 @@ meu-tcc/
 ```
 
 > [!CAUTION]
-> **Não modifique** os arquivos dentro da pasta `academic-del/`. Qualquer customização deve ser feita no `main.typ` por meio dos parâmetros da função `tcc()`.
+> **Não modifique** os arquivos dentro da pasta `academic-del/`. Qualquer customização deve ser feita no `main.typ` por meio dos parâmetros da função `tcc()` ou `relatorioFinal()`.
 
 ---
 
@@ -191,6 +192,34 @@ O sistema desenvolvido demonstrou...
 
 ---
 
+## Exemplo para Relatório PIBIC / PICVOL
+
+Se o seu trabalho for um **Relatório Final de Iniciação Científica**, utilize a função `relatorioFinal` em vez de `tcc`:
+
+```typst
+#import "academic-del/lib.typ": figura, relatorioFinal, sigla
+
+#show: doc => relatorioFinal(
+  tituloProjeto: "Título do Projeto de Pesquisa",
+  tituloPlanoDeTrabalho: "Título do Plano de Trabalho do Bolsista",
+  autor: "Nome do Bolsista",
+  voluntario: false, // setar true para PICVOL
+  dataInicial: "setembro de 2025",
+  dataFinal: "agosto de 2026",
+  sumario: true,
+  resumo: (
+    texto: [Resumo do relatório de iniciação científica...],
+    palavrasChave: ("Iniciação Científica", "PIBIC", "Typst"),
+  ),
+  doc,
+)
+
+= Introdução
+Texto da introdução...
+```
+
+---
+
 ## Compilando o Documento
 
 ```sh
@@ -205,4 +234,4 @@ O PDF será gerado na mesma pasta com o nome `main.pdf`.
 
 ---
 
-[← Instalação](./02-instalacao.md) | [Próximo: Configuração →](./04-configuracao.md)
+[← Instalação](./02-instalacao.md) | [Próximo: Configuração TCC →](./04a-configuracao-tcc.md)

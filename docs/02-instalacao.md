@@ -1,4 +1,4 @@
-﻿# 2. Instalação — Como Baixar e Configurar
+# 2. Instalação — Como Baixar e Configurar
 
 ---
 
@@ -111,7 +111,7 @@ Se você já tem um projeto em andamento:
 ```
 
 > [!NOTE]
-> O ponto de entrada do template é `academic-del/lib.typ`. Esse arquivo re-exporta as três funções públicas: `tcc`, `figura` e `sigla`.
+> O ponto de entrada do template é `academic-del/lib.typ`. Esse arquivo re-exporta as funções públicas do pacote: `tcc`, `relatorioFinal`, `figura` e `sigla`.
 
 ---
 
