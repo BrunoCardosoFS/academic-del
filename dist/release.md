@@ -2,7 +2,9 @@
 
 Modelo de **Trabalho de Conclusão de Curso (TCC)** em **Typst**, configurado e adaptado conforme as normas da ABNT e diretrizes do **Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS)**.
 
-**Tutorial Completo em PDF:** Confira o guia detalhado de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.pdf) e o seu [código Typst](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.typ) correspondente.
+📚 **Documentação completa:** [docs/index.md](https://github.com/BrunoCardosoFS/academic-del/blob/main/docs/index.md) — cobre instalação, configuração, elementos textuais e pós-textuais, arquitetura e changelog.
+
+**Tutorial Completo em PDF:** Confira o guia de uso e formatação consultando o [tutorial.pdf](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.pdf) e o seu [código Typst](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/academic-del/tutorial/tutorial.typ) correspondente.
 
 ---
 
