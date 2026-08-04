@@ -306,4 +306,16 @@ Texto da introdução...
 
 ---
 
+## Arquivo de Exemplo Prático
+
+Um modelo de TCC está disponível no arquivo `academic-del/examples/tcc.typ`. Você pode utilizá-lo como base para iniciar o seu documento.
+
+> [!IMPORTANT]
+> Caso deseje compilar o arquivo de exemplo diretamente via **Typst CLI**, informe a flag `--root .` para que os imports sejam resolvidas a partir da raiz:
+> ```sh
+> typst compile academic-del/examples/tcc.typ --root ./ --font-path ./academic-del/fonts
+> ```
+
+---
+
 [← Primeiros Passos](./03-primeiros-passos.md) | [Próximo: Configuração PIBIC →](./04b-configuracao-pibic.md)

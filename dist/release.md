@@ -16,11 +16,22 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 3. Abra o projeto no seu editor (ex: VS Code com a extensão *Tinymist Typst*) e comece a editar o arquivo `main.typ`.
 
 > [!IMPORTANT]
-> Ao compilar via **Typst CLI**, é necessário informar o caminho da pasta de fontes com a flag `--font-path`:
+> Ao compilar via **Typst CLI**, informe o caminho das fontes com a flag `--font-path`:
 > ```sh
+> # Compilação do projeto (main.typ)
 > typst compile main.typ --font-path ./academic-del/fonts
+>
+> # Compilação em modo watch (atualização automática ao salvar)
+> typst watch main.typ --font-path ./academic-del/fonts
 > ```
-> Sem isso, o Typst não encontrará as fontes customizadas do template (Arimo) e a compilação falhará.
+> Sem a flag `--font-path ./academic-del/fonts`, o Typst não encontrará as fontes customizadas (**Arimo**) e a compilação falhará.
+
+> [!IMPORTANT]
+> **Nota para compilação dos arquivos de exemplos (`academic-del/examples/`):**
+> Caso deseje compilar diretamente um arquivo de exemplo dentro da pasta do pacote (ex: `examples/tcc.typ` ou `examples/pibic.typ`), é necessário passar a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
+> ```sh
+> typst compile --root . academic-del/examples/tcc.typ --font-path ./academic-del/fonts
+> ```
 
 ---
 

@@ -125,4 +125,16 @@ Texto da introdução...
 
 ---
 
+## Arquivo de Exemplo
+
+Um modelo de Relatório Final PIBIC/PICVOL está disponível no arquivo `academic-del/examples/pibic.typ`. Você pode utilizá-lo como base para iniciar o seu documento.
+
+> [!IMPORTANT]
+> Caso deseje compilar o arquivo de exemplo diretamente via **Typst CLI**, informe a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
+> ```sh
+> typst compile academic-del/examples/pibic.typ --root ./ --font-path ./academic-del/fonts
+> ```
+
+---
+
 [← Configuração TCC](./04a-configuracao-tcc.md) | [Próximo: Elementos Textuais →](./05-elementos-textuais.md)
