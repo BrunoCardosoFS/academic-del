@@ -8,7 +8,7 @@
 // de sua respectiva instituição.
 // =============================================================================
 
-#import "../config.typ": figura, sigla, tcc
+#import "../lib.typ": figura, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",
