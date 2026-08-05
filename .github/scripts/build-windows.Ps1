@@ -47,7 +47,11 @@ Copy-Item -Path (Join-Path $ProjectRoot "LICENSE") -Destination (Join-Path $Rele
 #     throw "Falha ao gerar o tutorial.pdf com Typst."
 # }
 
-# 4. Gerar zip academic-del.zip com todos os arquivos da pasta release
+# 4. Remover todos os arquivos .pdf da pasta release
+Write-Host "-> Removendo arquivos .pdf da pasta release..." -ForegroundColor Yellow
+Get-ChildItem -Path $ReleaseDir -Recurse -Filter "*.pdf" | Remove-Item -Force
+
+# 5. Gerar zip academic-del.zip com todos os arquivos da pasta release
 $ZipPath = Join-Path $ProjectRoot "academic-del.zip"
 if (Test-Path -Path $ZipPath) {
     Remove-Item -Path $ZipPath -Force
