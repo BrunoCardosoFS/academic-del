@@ -23,7 +23,6 @@
 ## Links Rápidos
 
 - 📦 [Releases no GitHub](https://github.com/BrunoCardosoFS/academic-del/releases/latest)
-- 📄 [Tutorial em PDF](https://github.com/BrunoCardosoFS/academic-del/blob/main/src/academic-del/tutorial/tutorial.pdf)
 - 🌐 [Typst App](https://typst.app)
 - 📖 [Documentação Typst](https://typst.app/docs)
 
