@@ -1,6 +1,6 @@
-# Template Acadêmico em Typst — DEL / UFS (TCC e PIBIC)
+# Template Acadêmico em Typst — DEL / UFS (TCC, PIBIC e PIBITI)
 
-Este repositório contém um conjunto de modelos acadêmicos (Trabalhos de Conclusão de Curso — TCC e Relatórios Finais PIBIC/PICVOL) em **Typst**, configurado e estilizado segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptado para as diretrizes do Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS).
+Este repositório contém um conjunto de modelos acadêmicos (Trabalhos de Conclusão de Curso — TCC, Relatórios Finais PIBIC/PICVOL e Relatórios Finais PIBITI) em **Typst**, configurados e estilizados segundo as normas da ABNT (Associação Brasileira de Normas Técnicas) e adaptados para as diretrizes do Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS).
 
 ---
 
@@ -16,7 +16,7 @@ A documentação completa do template está disponível online:
 
 👉 **[Acesse a Documentação](https://github.com/BrunoCardosoFS/academic-del/blob/main/docs/index.md)**
 
-Ela cobre instalação, configuração, uso de elementos textuais e pós-textuais, arquitetura interna do template e o histórico de versões.
+Ela cobre instalação, configuração (TCC, PIBIC/PICVOL e PIBITI), uso de elementos textuais e pós-textuais, arquitetura interna do template e o histórico de versões.
 
 ---
 
@@ -44,9 +44,9 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 
 > [!IMPORTANT]
 > **Nota para compilação dos arquivos de exemplos (`academic-del/examples/`):**
-> Caso deseje compilar diretamente um arquivo de exemplo dentro da pasta do pacote (ex: `academic-del/examples/tcc.typ` ou `academic-del/examples/pibic.typ`), é necessário passar a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
+> Caso deseje compilar diretamente um arquivo de exemplo dentro da pasta do pacote (ex: `academic-del/examples/tcc.typ`, `pibic.typ` ou `pibiti.typ`), é necessário passar a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
 > ```sh
-> typst compile --root . academic-del/examples/tcc.typ --font-path ./academic-del/assets/fonts
+> typst compile --root . academic-del/examples/pibiti.typ --font-path ./academic-del/assets/fonts
 > ```
 
 ---
@@ -62,27 +62,20 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 ### 3. Integração em um Projeto Typst Existente
 Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
 1. Baixe o arquivo ZIP nas [Releases](https://github.com/BrunoCardosoFS/academic-del/releases/latest) e copie apenas a pasta `academic-del` para a raiz do seu projeto.
-2. No seu arquivo `.typ` principal, adicione o import no topo:
+2. No seu arquivo `.typ` principal, adicione o import no topo e utilize a função correspondente ao modelo desejado (`tcc`, `relatorioFinal` / `relatorioFinalPIBIC`, ou `relatorioFinalPIBITI`):
 
 ```typst
-#import "academic-del/lib.typ": figura, relatorioFinal, sigla, tcc
-
-#show: doc => tcc(
-  curso: "Engenharia Elétrica",
-  autor: "Seu Nome",
-  titulo: "Título do Seu Trabalho",
-  // ... demais configurações
-)
+#import "academic-del/lib.typ": figura, relatorioFinalPIBITI, sigla, tcc
 ```
 
 ---
 
 ## Configuração e Uso do Template
 
-O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `academic-del/lib.typ` e utilizando a função `#show: doc => tcc(...)` (para TCC) ou `#show: doc => relatorioFinal(...)` (para PIBIC/PICVOL):
+O template é inicializado no topo do arquivo principal (ex.: `main.typ`) importando as funções do módulo `academic-del/lib.typ` e utilizando a função `#show: doc => tcc(...)` (para TCC), `#show: doc => relatorioFinal(...)` (para PIBIC/PICVOL) ou `#show: doc => relatorioFinalPIBITI(...)` (para PIBITI):#show: doc => tcc(...)` (para TCC) ou `#show: doc => relatorioFinal(...)` (para PIBIC/PICVOL):
 
 ```typst
-#import "academic-del/lib.typ": figura, relatorioFinal, sigla, tcc
+#import "academic-del/lib.typ": figura, sigla, tcc
 
 #show: doc => tcc(
   curso: "Engenharia Elétrica",

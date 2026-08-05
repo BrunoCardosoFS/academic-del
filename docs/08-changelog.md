@@ -1,5 +1,29 @@
 # 8. Changelog — Histórico de Versões
 
+## v0.0.3 — Suporte ao Modelo PIBITI e Reorganização de Modelos
+
+**Data:** Agosto de 2026
+
+### O que mudou
+
+Esta versão adiciona suporte ao modelo de Relatório Final do Programa Institucional de Iniciação em Desenvolvimento Tecnológico e Inovação (**PIBITI**) e reorganiza a estrutura interna do pacote.
+
+#### Novos arquivos e modelos
+
+| Arquivo | Descrição |
+|---|---|
+| `models/pibiti.typ` | Função principal `relatorioFinalPIBITI()`, orquestra a capa institucional UFS/POSGRAP/AGITTE e pré-textuais PIBITI |
+| `examples/pibiti.typ` | Exemplo completo e compilável para Relatório Final PIBITI |
+| `docs/04c-configuracao-pibiti.md` | Guia de configuração e referência de parâmetros do modelo PIBITI |
+
+#### Reorganização de arquivos
+
+- A pasta de componentes (`components/`) foi renomeada/reorganizada para `models/` (`tcc.typ`, `pibic.typ`, `pibiti.typ`).
+- Os assets foram consolidados na pasta `assets/`:
+  - `assets/fonts/`: Fontes tipográficas (**Arimo**).
+  - `assets/images/`: Imagens e brasões institucionais (`Brasao.svg`, `posgrap.png`, `agitte.png`).
+- O ponto de entrada `lib.typ` foi atualizado para exportar `relatorioFinalPIBITI`, `relatorioFinalPIBIC` (com alias `relatorioFinal`), `tcc`, `figura` e `sigla`.
+
 ---
 
 ## v0.0.2 — Refatoração Modular

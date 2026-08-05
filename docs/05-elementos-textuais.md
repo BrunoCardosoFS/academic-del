@@ -326,4 +326,4 @@ Nenhuma configuração adicional é necessária — o template cuida disso autom
 
 ---
 
-[← Configuração PIBIC](./04b-configuracao-pibic.md) | [Próximo: Elementos Pós-Textuais →](./06-elementos-pos-textuais.md)
+[← Configuração PIBITI](./04c-configuracao-pibiti.md) | [Próximo: Elementos Pós-Textuais →](./06-elementos-pos-textuais.md)

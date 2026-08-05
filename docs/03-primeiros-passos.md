@@ -195,6 +195,49 @@ O sistema desenvolvido demonstrou...
 
 ---
 
+## Exemplo para Relatório PIBITI
+
+Se o seu trabalho for um **Relatório Final PIBITI** (Desenvolvimento Tecnológico e Inovação), utilize a função `relatorioFinalPIBITI`:
+
+```typst
+#import "academic-del/lib.typ": figura, relatorioFinalPIBITI, sigla
+
+#show: doc => relatorioFinalPIBITI(
+  tituloProjeto: "Plataforma IoT de Monitoramento Inteligente",
+  areaDoConhecimento: "Engenharias",
+  subAreaDoConhecimento: "Engenharia Elétrica",
+  especialidadeDoConhecimento: "Medição e Controle",
+  autor: "Nome do Bolsista",
+  dataInicial: "setembro de 2025",
+  dataFinal: "agosto de 2026",
+  sumario: true,
+  resumo: (
+    texto: [
+      Este trabalho apresenta o desenvolvimento de um protótipo IoT para...
+    ],
+    palavrasChave: ("Inovação", "PIBITI", "IoT", "Engenharia Elétrica"),
+  ),
+  doc,
+)
+
+= Introdução
+Texto da introdução...
+
+= Desenvolvimento
+Texto do desenvolvimento...
+
+= Conclusão
+Texto da conclusão...
+
+// ============================
+// ELEMENTOS PÓS-TEXTUAIS
+// ============================
+#set heading(numbering: none)
+#bibliography("referencias.bib", style: "associacao-brasileira-de-normas-tecnicas", title: "REFERÊNCIAS")
+```
+
+---
+
 ## Compilando o Documento
 
 ```sh

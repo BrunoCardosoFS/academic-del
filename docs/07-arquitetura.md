@@ -10,10 +10,14 @@ O template foi estruturado de forma modular: cada responsabilidade é isolada em
 
 ```
 academic-del/
-├── lib.typ                  ← Ponto de entrada público (re-exporta tcc, relatorioFinal, figura, sigla)
-├── components/
+├── lib.typ                  ← Ponto de entrada público (re-exporta tcc, relatorioFinal, relatorioFinalPIBIC, relatorioFinalPIBITI, figura, sigla)
+├── assets/
+│   ├── fonts/               ← Arquivos de fontes tipográficas (Arimo)
+│   └── images/              ← Logotipos e brasões institucionais (Brasao.svg, posgrap.png, agitte.png)
+├── models/
 │   ├── tcc.typ              ← Função principal tcc() — orquestra os pré-textuais de TCC
-│   └── pibic.typ            ← Função principal relatorioFinal() — orquestra capa e pré-textuais PIBIC/PICVOL
+│   ├── pibic.typ            ← Função principal relatorioFinalPIBIC() (alias: relatorioFinal) — PIBIC/PICVOL
+│   └── pibiti.typ           ← Função principal relatorioFinalPIBITI() — PIBITI
 └── core/
     ├── format.typ           ← Estilos ABNT globais (margens, fonte, seções, equações)
     ├── utils.typ            ← Funções públicas: figura() e sigla()
@@ -28,24 +32,26 @@ academic-del/
 ### `lib.typ` — Ponto de Entrada Público
 
 ```
-Versão: 0.0.2
+Versão: 0.0.3
 Licença: MIT
 ```
 
-Este arquivo é o único que o usuário importa. Ele re-exporta tudo que os componentes em `components/` expõem (via `#import "components/tcc.typ": *` e `#import "components/pibic.typ": *`), que por sua vez disponibilizam `tcc`, `relatorioFinal`, `figura` e `sigla`.
+Este arquivo é o único que o usuário importa. Ele re-exporta as funções utilitárias do `core/utils.typ` e as funções principais de cada modelo em `models/`:
 
 ```typst
 // lib.typ
 #import "core/utils.typ": *
-#import "components/tcc.typ": *
-#import "components/pibic.typ": *
+#import "models/tcc.typ": *
+#import "models/pibiti.typ": relatorioFinalPIBITI
+#import "models/pibic.typ": relatorioFinalPIBIC
+#import "models/pibic.typ": relatorioFinalPIBIC as relatorioFinal // Retrocompatibilidade
 ```
 
 **Propósito:** Isolar o usuário da estrutura interna de pastas. Mesmo que os módulos internos sejam reorganizados, o import `"academic-del/lib.typ"` permanece estável.
 
 ---
 
-### `components/tcc.typ` — Função Principal
+### `models/tcc.typ` — Função Principal TCC
 
 Contém a função `tcc()` que:
 
@@ -67,22 +73,26 @@ Contém a função `tcc()` que:
 3. Ativa a numeração de páginas.
 4. Renderiza o `body` (corpo do documento).
 
-**Imports internos:**
-```typst
-#import "../core/format.typ": *
-#import "../core/utils.typ": _siglasState, sigla, figura
-#import "../core/listas.typ": lista-figuras, lista-siglas, lista-simbolos, lista-tabelas, sumario as pag-sumario
-#import "../core/pretextuais.typ": agradecimentos as pag-agradecimentos, ...
-```
-
 ---
 
-### `components/pibic.typ` — Função PIBIC / PICVOL
+### `models/pibic.typ` — Função PIBIC / PICVOL
 
-Contém a função `relatorioFinal()` que:
+Contém a função `relatorioFinalPIBIC()` (disponível também via alias `relatorioFinal()`) que:
 
 1. Chama `aplicar-estilos-abnt()` para aplicar a formatação ABNT.
 2. Gera a capa institucional padronizada da UFS (POSGRAP/COPES) com logos e dados do projeto/plano de trabalho.
+3. Renderiza a folha de Resumo (ABNT NBR 6028) e o Sumário (ABNT NBR 6027).
+4. Ativa a numeração de páginas no canto superior direito a partir da Introdução.
+5. Renderiza o `body` (corpo do relatório).
+
+---
+
+### `models/pibiti.typ` — Função PIBITI
+
+Contém a função `relatorioFinalPIBITI()` que:
+
+1. Chama `aplicar-estilos-abnt()` para aplicar a formatação ABNT.
+2. Gera a capa institucional padronizada da UFS (POSGRAP/AGITTE) com logos institucionais (Brasão UFS, POSGRAP e AGITTE) e dados de área, subárea e especialidade do conhecimento.
 3. Renderiza a folha de Resumo (ABNT NBR 6028) e o Sumário (ABNT NBR 6027).
 4. Ativa a numeração de páginas no canto superior direito a partir da Introdução.
 5. Renderiza o `body` (corpo do relatório).
@@ -218,7 +228,7 @@ Usuário escreve main.typ
 
 ## Versão Atual
 
-**v0.0.2** — Módulos separados em `core/` e `components/`
+**v0.0.3** — Suporte ao modelo PIBITI e reorganização de modelos e assets
 
 Para o histórico completo de mudanças, consulte o [Changelog](./08-changelog.md).
 

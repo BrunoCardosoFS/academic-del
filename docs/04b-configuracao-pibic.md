@@ -143,4 +143,4 @@ Um modelo de Relatório Final PIBIC/PICVOL está disponível no arquivo `academi
 
 ---
 
-[← Configuração TCC](./04a-configuracao-tcc.md) | [Próximo: Elementos Textuais →](./05-elementos-textuais.md)
+[← Configuração TCC](./04a-configuracao-tcc.md) | [Próximo: Configuração PIBITI →](./04c-configuracao-pibiti.md)

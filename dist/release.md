@@ -1,8 +1,8 @@
-# Release vx.x.x — Template Acadêmico em Typst — DEL / UFS (TCC e PIBIC)
+# Release vx.x.x — Template Acadêmico em Typst — DEL / UFS (TCC, PIBIC e PIBITI)
 
-Conjunto de modelos acadêmicos para **Trabalhos de Conclusão de Curso (TCC)** e **Relatórios Finais PIBIC/PICVOL** em **Typst**, configurados e adaptados conforme as normas da ABNT e diretrizes do **Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS)**.
+Conjunto de modelos acadêmicos para **Trabalhos de Conclusão de Curso (TCC)**, **Relatórios Finais PIBIC/PICVOL** e **Relatórios Finais PIBITI** em **Typst**, configurados e adaptados conforme as normas da ABNT e diretrizes do **Departamento de Engenharia Elétrica da Universidade Federal de Sergipe (DEL/UFS)**.
 
-📚 **Documentação completa:** [docs/index.md](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/docs/index.md) — cobre instalação, configuração (TCC e PIBIC), elementos textuais e pós-textuais, arquitetura e changelog.
+📚 **Documentação completa:** [docs/index.md](https://github.com/BrunoCardosoFS/academic-del/blob/vx.x.x/docs/index.md) — cobre instalação, configuração (TCC, PIBIC/PICVOL e PIBITI), elementos textuais e pós-textuais, arquitetura e changelog.
 
 ---
 
@@ -28,9 +28,9 @@ Escolha a forma que melhor se adapta ao seu fluxo de trabalho:
 
 > [!IMPORTANT]
 > **Nota para compilação dos arquivos de exemplos (`academic-del/examples/`):**
-> Caso deseje compilar diretamente um arquivo de exemplo dentro da pasta do pacote (ex: `examples/tcc.typ` ou `examples/pibic.typ`), é necessário passar a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
+> Caso deseje compilar diretamente um arquivo de exemplo dentro da pasta do pacote (ex: `examples/tcc.typ`, `examples/pibic.typ` ou `examples/pibiti.typ`), é necessário passar a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
 > ```sh
-> typst compile --root . academic-del/examples/tcc.typ --font-path ./academic-del/assets/fonts
+> typst compile --root . academic-del/examples/pibiti.typ --font-path ./academic-del/assets/fonts
 > ```
 
 ---
@@ -67,6 +67,20 @@ Se você já possui um projeto em andamento e deseja apenas aplicar o modelo:
 #show: doc => relatorioFinal(
   tituloProjeto: "Título do Projeto",
   tituloPlanoDeTrabalho: "Título do Plano de Trabalho",
+  autor: "Nome do Bolsista",
+  // ... demais configurações
+)
+```
+
+#### Para Relatório Final PIBITI:
+```typst
+#import "academic-del/lib.typ": figura, relatorioFinalPIBITI, sigla
+
+#show: doc => relatorioFinalPIBITI(
+  tituloProjeto: "Título do Projeto",
+  areaDoConhecimento: "Engenharias",
+  subAreaDoConhecimento: "Engenharia Elétrica",
+  especialidadeDoConhecimento: "Especialidade",
   autor: "Nome do Bolsista",
   // ... demais configurações
 )
