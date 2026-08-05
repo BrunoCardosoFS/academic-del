@@ -1,7 +1,7 @@
 // =============================================================================
 // TEMPLATE DE TRABALHOS ACADÊMICOS - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
 // Configuração e Estilização Typst conforme Normas ABNT
-// Versão: 0.0.2
+// Versão: 0.0.3
 // -----------------------------------------------------------------------------
 // Copyright (c) 2026. Bruno Cardoso.
 // Licenca: MIT
@@ -17,5 +17,7 @@
 // =============================================================================
 
 #import "core/utils.typ": *
-#import "components/tcc.typ": *
-#import "components/pibic.typ": *
+#import "models/tcc.typ": *
+#import "models/pibiti.typ": relatorioFinalPIBITI
+#import "models/pibic.typ": relatorioFinalPIBIC
+#import "models/pibic.typ": relatorioFinalPIBIC as relatorioFinal // Retrocompatibilidade

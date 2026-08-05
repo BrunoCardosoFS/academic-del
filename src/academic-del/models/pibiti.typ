@@ -1,8 +1,5 @@
 // =============================================================================
-// TEMPLATE DE Relatórios PIBIC - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
-// Configuração e Estilização Typst conforme Normas ABNT
-// Versão: 0.0.2
-// -----------------------------------------------------------------------------
+// TEMPLATE DE Relatórios PIBITI - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
 // Copyright (c) 2026. Bruno Cardoso.
 // Licenca: MIT
 //
@@ -23,11 +20,13 @@
 )
 
 
-#let relatorioFinal(
+#let relatorioFinalPIBITI(
   tituloProjeto: "",
-  tituloPlanoDeTrabalho: "",
+  areaDoConhecimento: "",
+  subAreaDoConhecimento: "",
+  especialidadeDoConhecimento: "",
   autor: "",
-  voluntario: false,
+  // voluntario: false,
   dataInicial: "janeiro de 2026",
   dataFinal: "dezembro de 2026",
   sumario: true,
@@ -41,40 +40,55 @@
   // A CAPA (Padrão UFS)
   page(numbering: none)[
     #set par(
-      leading: 1.2em,
+      leading: 0.65em,
       justify: false,
       first-line-indent: 0mm,
     )
     #align(center + horizon)[
-      #image("../medias/images/Brasao.svg", width: 25mm)
+
+      #stack(
+        dir: ltr,
+        spacing: 2.0cm,
+        image("../assets/images/Brasao.svg", height: 30mm),
+        image("../assets/images/posgrap.png", height: 20mm),
+        image("../assets/images/agitte.png", height: 30mm),
+      )
+
+
       #v(2mm)
-      #text(size: 1.45em)[
+      #text(size: 1.5em)[
         UNIVERSIDADE FEDERAL DE SERGIPE \
         PRÓ-REITORIA DE PÓS GRADUAÇÃO E PESQUISA \
-        COORDENAÇÃO DE PESQUISA
+        AGÊNCIA DE INOVAÇÃO E TRANSFERÊNCIA DE TECNOLOGIA
       ] \
 
-
       #v(1fr)
-      #text(size: 1.2em)[
-        #if (voluntario) {
-          upper("PROGRAMA DE INICIAÇÃO CIENTÍFICA VOLUNTÁRIA - PICVOL")
-        } else {
-          upper("PROGRAMA INSTITUCIONAL DE BOLSAS DE INICIAÇÃO CIENTÍFICA - PIBIC")
-        }
+      #text(size: 1.16em)[
+        #upper("Programa Institucional de Iniciação em Desenvolvimento Tecnológico e Inovação - PIBITI")
       ] \
+
       #v(1fr)
 
-      #text(size: 1.45em, weight: "bold")[#upper(tituloProjeto)]\
-      #v(5mm)
-      #text(size: 1.45em, weight: "bold")[#upper(tituloPlanoDeTrabalho)]\
+      #text(size: 1.5em, weight: "bold")[#upper(tituloProjeto)]
+
+      #v(1fr)
+
+      #text(size: 1.16em)[
+        #set par(leading: 0.65em)
+        Área do conhecimento: #areaDoConhecimento \
+        Subárea do conhecimento: #subAreaDoConhecimento \
+        Especialidade do conhecimento: #especialidadeDoConhecimento
+      ]
+      // #text(size: 1.45em, weight: "bold")[#upper(tituloPlanoDeTrabalho)]\
 
       // #v(1fr)
       // #text(size: 1.5em)[#autor]
 
       #v(3fr)
-      Relatório final \
-      Período da bolsa: de #dataInicial até #dataFinal
+      #text(size: 1.16em)[
+        Relatório final \
+        Período da bolsa: de #dataInicial até #dataFinal
+      ]
       #pagebreak()
     ]
   ]
@@ -104,7 +118,7 @@
 })
 
 
-#let relatorioParcial(
+#let relatorioParcialPIBITI(
   tituloProjeto: "",
   tituloPlanoDeTrabalho: "",
   autor: "",

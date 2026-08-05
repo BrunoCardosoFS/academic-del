@@ -1,8 +1,5 @@
 // =============================================================================
 // TEMPLATE DE TCC - UNIVERSIDADE FEDERAL DE SERGIPE (UFS)
-// Configuração e Estilização Typst conforme Normas ABNT
-// Versão: 0.0.2
-// -----------------------------------------------------------------------------
 // Copyright (c) 2026. Bruno Cardoso.
 // Licenca: MIT
 //
@@ -73,7 +70,7 @@
   page(numbering: none)[
     #set par(leading: 1.2em, justify: false, first-line-indent: 0mm)
     #align(center)[
-      #image("../medias/images/Brasao.svg", width: 25mm)
+      #image("../assets/images/Brasao.svg", width: 25mm)
       #v(2mm)
       #text(size: 1em)[
         UNIVERSIDADE FEDERAL DE SERGIPE \

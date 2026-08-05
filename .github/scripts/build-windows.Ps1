@@ -32,7 +32,7 @@ Copy-Item -Path (Join-Path $ProjectRoot "LICENSE") -Destination (Join-Path $Rele
 # 3. Apagar tutorial.pdf e gerar novamente com typst
 # $TutorialPdf = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.pdf"
 # $TutorialTyp = Join-Path $ReleaseDir "academic-del\tutorial\tutorial.typ"
-# $FontsDir = Join-Path $ReleaseDir "academic-del\medias\fonts"
+# $FontsDir = Join-Path $ReleaseDir "academic-del\assets\fonts"
 # $AcademicDelDir = Join-Path $ReleaseDir "academic-del"
 
 # if (Test-Path -Path $TutorialPdf) {

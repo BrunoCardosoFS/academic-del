@@ -313,7 +313,7 @@ Um modelo de TCC está disponível no arquivo `academic-del/examples/tcc.typ`. V
 > [!IMPORTANT]
 > Caso deseje compilar o arquivo de exemplo diretamente via **Typst CLI**, informe a flag `--root .` para que os imports sejam resolvidas a partir da raiz:
 > ```sh
-> typst compile academic-del/examples/tcc.typ --root ./ --font-path ./academic-del/fonts
+> typst compile academic-del/examples/tcc.typ --root ./ --font-path ./academic-del/assets/fonts
 > ```
 
 ---

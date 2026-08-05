@@ -138,7 +138,7 @@ Um modelo de Relatório Final PIBIC/PICVOL está disponível no arquivo `academi
 > [!IMPORTANT]
 > Caso deseje compilar o arquivo de exemplo diretamente via **Typst CLI**, informe a flag `--root .` para que os imports sejam resolvidos a partir da raiz:
 > ```sh
-> typst compile academic-del/examples/pibic.typ --root ./ --font-path ./academic-del/fonts
+> typst compile academic-del/examples/pibic.typ --root ./ --font-path ./academic-del/assets/fonts
 > ```
 
 ---

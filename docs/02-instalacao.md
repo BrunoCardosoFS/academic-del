@@ -48,10 +48,10 @@ Esta é a forma mais recomendada para quem vai editar o trabalho localmente.
    meu-tcc/
    ├── academic-del/       ← Pasta do template (não edite)
    │   ├── lib.typ
-   │   ├── components/
+   │   ├── models/
    │   ├── core/
-   │   ├── fonts/
-   │   └── medias/
+   │   ├── examples/
+   │   └── assets/
    ├── main.typ            ← Seu arquivo principal
    └── referencias.bib     ← Suas referências BibTeX
    ```
@@ -61,13 +61,13 @@ Esta é a forma mais recomendada para quem vai editar o trabalho localmente.
 > [!IMPORTANT]
 > Ao compilar via **Typst CLI no terminal**, informe o caminho das fontes com a flag `--font-path`:
 > ```sh
-> typst compile main.typ --font-path ./academic-del/fonts
+> typst compile main.typ --font-path ./academic-del/assets/fonts
 > ```
 > Sem essa flag, o Typst não encontrará a fonte **Arimo** e a compilação falhará ou usará uma fonte substituta incorreta.
 
 **Compilação com watch (atualização automática):**
 ```sh
-typst watch main.typ --font-path ./academic-del/fonts
+typst watch main.typ --font-path ./academic-del/assets/fonts
 ```
 O PDF é regenerado automaticamente a cada vez que você salva o arquivo.
 
@@ -120,7 +120,7 @@ Se você já tem um projeto em andamento:
 Após extrair os arquivos, compile o `main.typ` sem modificações:
 
 ```sh
-typst compile main.typ --font-path ./academic-del/fonts
+typst compile main.typ --font-path ./academic-del/assets/fonts
 ```
 
 Se um arquivo `main.pdf` for gerado sem erros, a instalação está correta. O documento gerado conterá dados de exemplo que você substituirá pelos dados reais do seu trabalho.

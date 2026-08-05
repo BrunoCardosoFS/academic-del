@@ -8,76 +8,13 @@ Após extrair o template, a estrutura esperada é:
 
 ```
 meu-projeto/
-├── academic-del/               ← Pasta do template (NÃO edite)
-│   ├── lib.typ                 ← Ponto de entrada público
-│   ├── components/
-│   │   ├── tcc.typ             ← Função principal tcc() (TCC)
-│   │   └── pibic.typ           ← Função principal relatorioFinal() (PIBIC/PICVOL)
-│   ├── core/
-│   │   ├── format.typ          ← Estilos ABNT (margens, fontes, etc.)
-│   │   ├── listas.typ          ← Sumário, lista de figuras/tabelas/siglas
-│   │   ├── pretextuais.typ     ← Dedicatória, agradecimentos, epígrafe, resumo
-│   │   └── utils.typ           ← Funções figura() e sigla()
-│   ├── fonts/
-│   │   └── Arimo/              ← Fonte tipográfica Arimo
-│   └── medias/
-│       └── images/
-│           └── Brasao.svg      ← Brasão da UFS usado na capa
-│
-├── main.typ                    ← Seu arquivo principal (EDITE ESTE)
-└── referencias.bib             ← Suas referências BibTeX (EDITE ESTE)
+├── academic-del/    ← Pasta do template (NÃO edite)
+├── main.typ         ← Seu arquivo principal (EDITE ESTE)
+└── referencias.bib  ← Suas referências BibTeX (EDITE ESTE)
 ```
 
 > [!CAUTION]
 > **Não modifique** os arquivos dentro da pasta `academic-del/`. Qualquer customização deve ser feita no `main.typ` por meio dos parâmetros da função `tcc()` ou `relatorioFinal()`.
-
----
-
-## O Arquivo main.typ
-
-Este é o único arquivo que você precisa editar. Ele tem duas partes:
-
-### Parte 1 — Configuração do Template (no topo)
-
-```typst
-#import "academic-del/lib.typ": figura, sigla, tcc
-
-#show: doc => tcc(
-  // Dados obrigatórios
-  curso: "Engenharia Elétrica",
-  autor: "Seu Nome Completo",
-  titulo: "Título do Seu Trabalho de Conclusão de Curso",
-
-  // Dados opcionais
-  subtitulo: "Subtítulo, se houver",         // Remover se não houver
-  coorientador: "Nome do Coorientador",      // Remover se não houver
-
-  // Restante dos parâmetros...
-  doc,
-)
-```
-
-### Parte 2 — O Texto do Trabalho
-
-```typst
-= Introdução
-Seu texto começa aqui...
-
-== Contextualização
-...
-
-= Desenvolvimento
-...
-
-= Conclusão
-...
-
-// ============================
-// ELEMENTOS PÓS-TEXTUAIS
-// ============================
-#set heading(numbering: none)
-#bibliography("referencias.bib", style: "associacao-brasileira-de-normas-tecnicas", title: "REFERÊNCIAS")
-```
 
 ---
 
@@ -262,10 +199,10 @@ O sistema desenvolvido demonstrou...
 
 ```sh
 # Compilar uma vez
-typst compile main.typ --font-path ./academic-del/fonts
+typst compile main.typ --font-path ./academic-del/assets/fonts
 
 # Compilar com atualização automática ao salvar
-typst watch main.typ --font-path ./academic-del/fonts
+typst watch main.typ --font-path ./academic-del/assets/fonts
 ```
 
 O PDF será gerado na mesma pasta com o nome `main.pdf`.
