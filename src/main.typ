@@ -1,17 +1,35 @@
-#import "academic-del/lib.typ": figura, relatorioFinalPIBITI, sigla, tcc
+#import "academic-del/lib.typ": figura, relatorioFinalPIBIC, relatorioFinalPIBITI, sigla, tcc
 
-#show: doc => relatorioFinalPIBITI(
-  tituloProjeto: "Título do Projeto",
-  areaDoConhecimento: "Área do Conhecimento",
-  subAreaDoConhecimento: "Subarea do Conhecimento",
-  especialidadeDoConhecimento: "Especialidade do Conhecimento",
-  autor: "Fulano de Tal",
-  dataInicial: "janeiro de 2026",
-  dataFinal: "dezembro de 2026",
+#show: doc => relatorioFinalPIBIC(
+  tituloProjeto: "Desenvolvimento de Antenas Fractais para Detecção de Descargas Parciais em Equipamentos de Alta Tensão",
+  tituloPlanoDeTrabalho: "Miniaturização de Antena Monopolo Impressa Circular a partir da Aplicação de Geometrias Fractais",
+  autor: "Bruno Cardoso Ferreira da Silva",
+  voluntario: false,
+  bolsa: "CNPq",
   sumario: true,
-  resumo: none,
+  dataInicial: "setembro de 2025",
+  dataFinal: "agosto de 2026",
+  resumo: (
+    texto: [
+      #lorem(150).
+    ],
+    palavrasChave: ("Iniciação Científica", "PIBIC", "Relatório Final", "Typst", "ABNT"),
+  ),
   doc,
 )
+
+// #show: doc => relatorioFinalPIBITI(
+//   tituloProjeto: "Título do Projeto",
+//   areaDoConhecimento: "Área do Conhecimento",
+//   subAreaDoConhecimento: "Subarea do Conhecimento",
+//   especialidadeDoConhecimento: "Especialidade do Conhecimento",
+//   autor: "Fulano de Tal",
+//   dataInicial: "janeiro de 2026",
+//   dataFinal: "dezembro de 2026",
+//   sumario: true,
+//   resumo: none,
+//   doc,
+// )
 
 // #show: doc => tcc(
 //   curso: "Engenharia Elétrica",
@@ -79,6 +97,16 @@
 // )
 
 = Introdução
+
+#lorem(100)
+
+#quote(block: true)[
+  #lorem(50)
+]
+
+#lorem(100)
+
+#lorem(100)
 
 
 

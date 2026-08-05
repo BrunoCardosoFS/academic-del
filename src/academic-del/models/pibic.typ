@@ -25,6 +25,7 @@
   tituloPlanoDeTrabalho: "",
   autor: "",
   voluntario: false,
+  bolsa: "CNPq",
   dataInicial: "janeiro de 2026",
   dataFinal: "dezembro de 2026",
   sumario: true,
@@ -38,14 +39,14 @@
   // A CAPA (Padrão UFS)
   page(numbering: none)[
     #set par(
-      leading: 1.2em,
+      leading: 0.65em,
       justify: false,
       first-line-indent: 0mm,
     )
     #align(center + horizon)[
       #image("../assets/images/Brasao.svg", width: 25mm)
       #v(2mm)
-      #text(size: 1.45em)[
+      #text(size: 1.5em)[
         UNIVERSIDADE FEDERAL DE SERGIPE \
         PRÓ-REITORIA DE PÓS GRADUAÇÃO E PESQUISA \
         COORDENAÇÃO DE PESQUISA
@@ -62,9 +63,9 @@
       ] \
       #v(1fr)
 
-      #text(size: 1.45em, weight: "bold")[#upper(tituloProjeto)]\
-      #v(5mm)
-      #text(size: 1.45em, weight: "bold")[#upper(tituloPlanoDeTrabalho)]\
+      #text(size: 1.5em, weight: "bold")[#upper(tituloProjeto)]\
+      #v(1em)
+      #text(size: 1.5em, weight: "bold")[#upper(tituloPlanoDeTrabalho)]\
 
       // #v(1fr)
       // #text(size: 1.5em)[#autor]
@@ -72,6 +73,14 @@
       #v(3fr)
       Relatório final \
       Período da bolsa: de #dataInicial até #dataFinal
+
+      #if (not voluntario) {
+        v(1em)
+        text(size: 1.2em)[
+          Este projeto é desenvolvido com bolsa de iniciação científica \
+          PIBIC/#bolsa
+        ]
+      }
       #pagebreak()
     ]
   ]

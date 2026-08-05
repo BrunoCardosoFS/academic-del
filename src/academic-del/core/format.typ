@@ -8,6 +8,8 @@
 // =============================================================================
 
 #let defaultFigureGap = 0.65em
+#let leadingSimples = 0.4em
+#let leadingPadrao = 0.65em
 
 // Aplica as regras de estilo ABNT ao documento.
 // Pode ser usada por qualquer tipo de documento (TCC, artigo, relatório, etc.)
@@ -34,7 +36,7 @@
 
   // Configurações do Corpo do Texto (ABNT NBR 14724 & NBR 6024)
   set par(
-    leading: 0.65em,
+    leading: leadingPadrao,
     justify: true,
     first-line-indent: (amount: 12.5mm, all: true),
   )
@@ -82,6 +84,16 @@
     show ",": math.class("normal", ",")
     it
   }
+
+  show quote: it => block(
+    pad(
+      left: 4cm, // Recuo de 4cm da margem esquerda
+      text(
+        size: 0.85em, // Fonte menor que o texto padrão
+        par(leading: leadingSimples, justify: true, it.body),
+      ),
+    ),
+  )
 
   // Formatação de Figuras e Tabelas (Legenda superior, Fonte inferior)
   set figure(gap: defaultFigureGap)

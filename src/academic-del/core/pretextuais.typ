@@ -3,6 +3,7 @@
 // Independentes do tipo de documento; podem ser usadas em TCC, artigo, etc.
 // =============================================================================
 
+#import "./format.typ": leadingSimples
 
 // 4. DEDICATÓRIA (ABNT NBR 14724)
 // Parâmetros:
@@ -67,10 +68,10 @@
     #text(weight: "bold", size: 12pt)[#titulo]
   ]
   #v(15mm)
-  #set par(leading: 0.65em, justify: true, first-line-indent: 0pt)
+  #set par(leading: leadingSimples, justify: true, first-line-indent: 0pt)
   #corpo
   #if palavrasChave != none [
-    #v(10mm)
+    #v(1em)
     *#tituloPalavras:* #palavrasChave.join("; ").
   ]
 ]
