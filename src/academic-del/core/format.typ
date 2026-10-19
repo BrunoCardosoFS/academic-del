@@ -36,7 +36,9 @@
 
   // Configurações do Corpo do Texto (ABNT NBR 14724 & NBR 6024)
   set par(
-    leading: leadingPadrao,
+    // espaçamento de 1 linha e meia para linhas e parágrafos.
+    leading: 1.5em,
+    spacing: 1.5em,
     justify: true,
     first-line-indent: (amount: 12.5mm, all: true),
   )
@@ -61,19 +63,23 @@
     set text(size: 12pt)
     if it.level == 1 {
       pagebreak(weak: true)
-      block(text(weight: "bold")[#upper(it)])
-      v(1.5em)
+      block(text(weight: "regular", size: 16pt)[
+        #upper(it)
+        #v(2em)
+      ])
     } else if it.level == 2 {
       v(1.2em)
-      block(text(weight: "bold")[#it])
-      v(1.2em)
+      block(text(weight: "regular", size: 14pt)[
+        #it
+        #v(2em)
+      ])
     } else if it.level == 3 {
       v(1em)
       block(text(weight: "regular")[#it])
       v(1em)
     } else {
       v(1em)
-      block(text(weight: "regular", style: "italic")[#it])
+      block(text(weight: "regular")[#it])
       v(1em)
     }
   }
@@ -83,6 +89,13 @@
   show math.equation: it => {
     show ",": math.class("normal", ",")
     it
+  }
+  // Referência com "(1)" ao invés e "Equação 1"
+  show ref: it => {
+    let eq = math.equation
+    let el = it.element
+    if el == none or el.func() != eq { return it }
+    link(el.location(), counter(eq).display(at: el.location()))
   }
 
   show quote: it => block(
@@ -116,7 +129,7 @@
 
   // Formatação da Bibliografia (ABNT NBR 6023)
   show bibliography: it => {
-    set par(justify: false, leading: 0.65em)
+    set par(justify: true, leading: 0.65em)
     set text(size: 12pt)
     it
   }

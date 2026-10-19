@@ -16,7 +16,9 @@
 #let sigla(curta, ..rest) = {
   let pos = rest.pos()
   let named = rest.named()
-  let longa = if pos.len() > 0 { pos.at(0) } else { named.at("longa", default: none) }
+  let longa = if pos.len() > 0 { pos.at(0) } else {
+    named.at("longa", default: none)
+  }
 
   if longa != none {
     _siglasState.update(s => {
@@ -39,11 +41,17 @@
 //   gap     — espaçamento entre o corpo e a fonte
 #let figura(body, caption: none, fonte: none, gap: defaultFigureGap, ..rest) = {
   let fonteText = if fonte == none {
-    [Fonte: Autoria própria.]
-  } else if type(fonte) == str and (fonte.starts-with("Fonte:") or fonte.starts-with("fonte:")) {
+    [Fonte: autoria própria.]
+    v(1em)
+  } else if (
+    type(fonte) == str
+      and (fonte.starts-with("Fonte:") or fonte.starts-with("fonte:"))
+  ) {
     [#fonte]
+    v(1em)
   } else {
     [Fonte: #fonte]
+    v(1em)
   }
 
   let fonteContent = text(size: 10pt)[#fonteText]
