@@ -86,19 +86,20 @@
 // 13. SUMÁRIO (ABNT NBR 6027)
 #let sumario() = page(numbering: none)[
   #align(center)[
-    #text(weight: "bold", size: 12pt)[SUMÁRIO]
+    #text(weight: "regular", size: 16pt)[SUMÁRIO]
   ]
   #v(15mm)
   #show outline.entry: it => {
     if it.level == 1 {
       v(12pt, weak: true)
-      strong(upper(it))
+      // strong(upper(it))
+      it
     } else if it.level == 2 {
-      strong(it)
+      pad(left: 1em)[#it]
     } else if it.level == 3 {
-      text(weight: "regular")[#it]
+      pad(left: 2em)[#it]
     } else {
-      text(weight: "regular", style: "italic")[#it]
+      pad(left: 3em)[#it]
     }
   }
   #outline(title: none, indent: 0pt)
