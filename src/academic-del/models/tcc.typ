@@ -15,9 +15,13 @@
 
 #import "../core/format.typ": *
 #import "../core/utils.typ": _siglasState, figura, sigla
-#import "../core/listas.typ": lista-figuras, lista-siglas, lista-simbolos, lista-tabelas, sumario as pag-sumario
+#import "../core/listas.typ": (
+  lista-figuras, lista-siglas, lista-simbolos, lista-tabelas,
+  sumario as pag-sumario,
+)
 #import "../core/pretextuais.typ": (
-  agradecimentos as pag-agradecimentos, dedicatoria as pag-dedicatoria, epigrafe as pag-epigrafe, resumo as pag-resumo,
+  agradecimentos as pag-agradecimentos, dedicatoria as pag-dedicatoria,
+  epigrafe as pag-epigrafe, resumo as pag-resumo,
 )
 
 
@@ -34,7 +38,11 @@
   coorientador: none,
   submissao: none,
   banca: (
-    (nome: "Professor Avaliador", instituicao: "Universidade Federal de Sergipe", funcao: "Avaliador"),
+    (
+      nome: "Professor Avaliador",
+      instituicao: "Universidade Federal de Sergipe",
+      funcao: "Avaliador",
+    ),
     (
       nome: "Nome do Orientador, D. Sc.",
       instituicao: "Universidade Federal de Sergipe",
@@ -76,7 +84,9 @@
         UNIVERSIDADE FEDERAL DE SERGIPE \
         CENTRO DE CIÊNCIAS EXATAS E TECNOLOGIA \
         // DEPARTAMENTO DE ENGENHARIA ELÉTRICA \
-        #upper([Curso de Graduação em #curso])
+
+        // Comentando pois nunca vi ser colocado nos TCCs do DEL
+        // #upper([Curso de Graduação em #curso])
       ] \
 
       #v(2fr)
@@ -84,7 +94,7 @@
       #text(weight: "bold")[#upper(autor)]
 
       #v(2fr)
-      // #text(size: 1.1em)[Trabalho de Conclusão de Curso] \
+      #text(size: 1.1em)[Trabalho de Conclusão de Curso] \
       // #v(2fr)
 
       #text(size: 1.2em, weight: "bold")[#upper(titulo)]
